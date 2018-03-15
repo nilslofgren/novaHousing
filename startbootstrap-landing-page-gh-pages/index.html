@@ -2,7 +2,14 @@
 <html lang="en">
 
   <head>
-
+	
+	<style>
+      #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -25,7 +32,7 @@
 
   <body>
 
-    <!-- Navigation -->
+	    <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
         <a class="navbar-brand" href="#">Start Bootstrap</a>
@@ -95,6 +102,24 @@
     <!-- Image Showcases -->
     <section class="showcase">
       <div class="container-fluid p-0">
+		<h3>My Google Maps Demo</h3>
+		<div id="map"></div>
+		<script>
+			function initMap() {
+				var uluru = {lat: 40.0368889, lng: -75.4180715};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 13,
+					center: uluru
+				});
+				var marker = new google.maps.Marker({
+					position: uluru,
+					map: map
+				});
+			}
+		</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&callback=initMap">
+    </script>
         <div class="row no-gutters">
 
           <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
@@ -152,7 +177,7 @@
 
     <!-- Call to Action -->
     <section class="call-to-action text-white text-center">
-      <div class="overlay"></div>
+	  <div class="overlay"></div>
       <div class="container">
         <div class="row">
           <div class="col-xl-9 mx-auto">
