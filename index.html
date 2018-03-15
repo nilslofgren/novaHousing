@@ -1,12 +1,40 @@
 <html>
-
-<h> Nove Off Campus Housing </h>
+<head>
+    <style>
+       #map {
+        height: 400px;
+        width: 100%;
+       }
+    </style>
+  </head>
+<h> Nova Off Campus Housing </h>
 <p> Hello world! </p>
 
 <img src="https://maps.googleapis.com/maps/api/staticmap?center=Villanova+University&zoom=13&size=1920x1080&maptype=roadmap
 &markers=color:blue%7Clabel:H%7C40.037056,-75.3457687&markers=color:green%7Clabel:G%40.0323244,-75.3443417
 &markers=color:red%7Clabel:C%7C40.718217,-73.998284
 &key=AIzaSyDgygxmxQzhCQ9FdMk7pFpSqjXMeXlv4sA">
+
+<body>
+    <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 40.037056, lng: -75.3457687};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&callback=initMap">
+    </script>
+  </body>
 
 
 </html>
