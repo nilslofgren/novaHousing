@@ -10,14 +10,10 @@
 <h> Nova Off Campus Housing </h>
 <p> Hello world! </p>
 
-<img src="https://maps.googleapis.com/maps/api/staticmap?center=Villanova+University&zoom=13&size=1920x1080&maptype=roadmap
-&markers=color:blue%7Clabel:H%7C40.037056,-75.3457687&markers=color:green%7Clabel:G%40.0323244,-75.3443417
-&markers=color:red%7Clabel:C%7C40.718217,-73.998284
-&key=AIzaSyDgygxmxQzhCQ9FdMk7pFpSqjXMeXlv4sA">
-
 <body>
-    <h3>My Google Maps Demo</h3>
+    <h3>Multiple Markers</h3>
     <div id="map"></div>
+    <!--
     <script>
       function initMap() {
         var uluru = {lat: 40.037056, lng: -75.3457687};
@@ -31,10 +27,50 @@
         });
       }
     </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&callback=initMap">
-    </script>
-  </body>
+  -->
+    <script>
+function initMap2(){
+      var locations = [
+           ['Villanova', 40.037056,-75.3457687, 1],
+           ['120 Elm Ave', 40.004676,-75.2966887, 2],
+           ['Qdoba', 40.0246195,-75.3274865, 3],
+           ['52 N Roberts', 40.0260413,-75.3248444, 4]
+      ];
+      var map = new google.maps.Map(document.getElementById('map'), {
+           zoom: 12,
+           center: new google.maps.LatLng(40.037056,-75.3457687),
+           mapTypeId: google.maps.MapTypeId.ROADMAP
+      });
+
+      var infowindow = new google.maps.InfoWindow;
+
+      var marker, i;
+
+      for (i = 0; i < locations.length; i++) {
+          marker = new google.maps.Marker({
+               position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+               map: map
+          });
+
+          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+               return function() {
+                   infowindow.setContent(locations[i][0]);
+                   infowindow.open(map, marker);
+               }
+          })(marker, i));
+      }
+}
+</script>
+</body>
+
+  <div data-role="page" id="map_result">
+      <div data-role="content" style="padding:0;">
+          <div id="map"></div>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&callback=initMap2">
+          </script>
+      </div>
+  </div>
 
 
 </html>
