@@ -102,52 +102,24 @@
     <!-- Image Showcases -->
     <section class="showcase">
       <div class="container-fluid p-0">
-        <body>
-            <h3>Multiple Markers</h3>
-            <div id="map"></div>
-            <script>
-        function initMap2(){
-              var locations = [
-                   ['Villanova', 40.0343908,-75.3386492, 1],
-                   ['120 Elm Ave', 40.004676,-75.2945, 2],
-                   ['Qdoba', 40.0246195,-75.3252978, 3],
-                   ['52 N Roberts', 40.0260413,-75.3226557, 4]
-              ];
-              var map = new google.maps.Map(document.getElementById('map'), {
-                   zoom: 12,
-                   center: new google.maps.LatLng(40.037056,-75.3457687),
-                   mapTypeId: google.maps.MapTypeId.ROADMAP
-              });
-
-              var infowindow = new google.maps.InfoWindow;
-
-              var marker, i;
-
-              for (i = 0; i < locations.length; i++) {
-                  marker = new google.maps.Marker({
-                       position: new google.maps.LatLng(locations[i][1], locations[i][2]),
-                       map: map
-                  });
-
-                  google.maps.event.addListener(marker, 'click', (function(marker, i) {
-                       return function() {
-                           infowindow.setContent(locations[i][0]);
-                           infowindow.open(map, marker);
-                       }
-                  })(marker, i));
-              }
-        }
-        </script>
-        </body>
-
-          <div data-role="page" id="map_result">
-              <div data-role="content" style="padding:0;">
-                  <div id="map"></div>
-                  <script async defer
-                  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&callback=initMap2">
-                  </script>
-              </div>
-          </div>
+		<h3>My Google Maps Demo</h3>
+		<div id="map"></div>
+		<script>
+			function initMap() {
+				var uluru = {lat: 40.037056, lng: -75.34358};
+				var map = new google.maps.Map(document.getElementById('map'), {
+					zoom: 13,
+					center: uluru
+				});
+				var marker = new google.maps.Marker({
+					position: uluru,
+					map: map
+				});
+			}
+		</script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&callback=initMap">
+    </script>
         <div class="row no-gutters">
 
           <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
