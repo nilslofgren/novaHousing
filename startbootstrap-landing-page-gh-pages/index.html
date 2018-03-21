@@ -97,17 +97,22 @@
     <!-- Image Showcases -->
     <section class="showcase">
       <div class="container-fluid p-0">
-		<h3>Some Listings Near You!</h3>
+		<h3>Find Listings Near You!</h3>
     <input id="pac-input" class="controls" type="text"
        placeholder="Enter a location">
 		<div id="map"></div>
     <div id="infowindow-content">
      <span id="place-name"  class="title"></span><br>
-     Place ID <span id="place-id"></span><br>
      <span id="place-address"></span>
    </div>
 		<script>
     function initMap() {
+      var locations = [
+           ['Villanova', 40.0343908,-75.3386492, 1],
+           ['120 Elm Ave', 40.004676,-75.2945, 2],
+           ['Qdoba', 40.0246195,-75.3252978, 3],
+           ['52 N Roberts', 40.0260413,-75.3226557, 4]
+      ];
       var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 40.037056, lng: -75.3457687},
         zoom: 13
@@ -126,6 +131,8 @@
       var marker = new google.maps.Marker({
         map: map
       });
+
+
       marker.addListener('click', function() {
         infowindow.open(map, marker);
       });
@@ -152,7 +159,6 @@
         marker.setVisible(true);
 
         infowindowContent.children['place-name'].textContent = place.name;
-        infowindowContent.children['place-id'].textContent = place.place_id;
         infowindowContent.children['place-address'].textContent =
             place.formatted_address;
         infowindow.open(map, marker);
