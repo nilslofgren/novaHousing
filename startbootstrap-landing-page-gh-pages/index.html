@@ -117,7 +117,7 @@
       var autocomplete = new google.maps.places.Autocomplete(input);
       autocomplete.bindTo('bounds', map);
 
-      map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+      map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
       var infowindow = new google.maps.InfoWindow();
       var infowindowContent = document.getElementById('infowindow-content');
