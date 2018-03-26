@@ -48,6 +48,15 @@ header.masthead h1 {
   }
 }
 
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    text-decoration: none;
+    color: initial;
+}
+
 .showcase .showcase-text {
   padding: 3rem;
 }
@@ -61,6 +70,24 @@ header.masthead h1 {
   .showcase .showcase-text {
     padding: 7rem;
   }
+}
+
+.wrap {
+width: 100%;
+}
+
+.floatleft {
+    float:left; 
+    width: 80%;
+    background-color: #ff0000;
+    height: 400px;
+}
+
+.floatright {
+float: right;
+    background-color: #00ff00;
+    height: 400px;
+    width: 20%;
 }
 
 .features-icons {
