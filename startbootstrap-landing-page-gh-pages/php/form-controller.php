@@ -1,11 +1,25 @@
+<html>
+<body>
+
+
+Success! Your input has been recorded!
+
+This is your username: <?php echo $_GET['user_name']; ?>
+
+</body>
+</html>
+
 <?php
+$servername = "CSDB-Remote.sql";
+$username = "nlofgren";
+$password = "fL@01509628";
 
-echo 'Hello World!'
-//  $user_name = htmlspecialchars($_POST['user_name']);
-//  $user_mail = htmlspecialchars($_POST['user_mail']);
-//  $user_message = htmlspecialchars($_POST['user_message']);
-//
-// echo $user_name, 'with the email: ', $user_mail, 'says: ', $user_message;
+// Create connection
+$conn = mysqli_connect($servername, $username, $password);
 
-
- ?>
+// Check connection
+if (!$conn) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+echo "Connected successfully";
+?>

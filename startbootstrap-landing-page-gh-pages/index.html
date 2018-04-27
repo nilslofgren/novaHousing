@@ -79,7 +79,7 @@
 	    <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" href="#">CSC 4480's Software</a>
+        <a class="navbar-brand" href="#">Sublet Paradise</a>
         <a class="btn btn-primary" href="#">Sign In</a>
       </div>
     </nav>
@@ -96,7 +96,9 @@
             <form>
               <div class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="search" class="form-control form-control-lg" placeholder="Enter Address Here...">
+                  <select class="form-control form-control-lg" placeholder="Choose Campus Here..">
+                    <option value="Villanova University"> Villanova University</option>
+                  </select>
                 </div>
                 <div class="col-12 col-md-3">
 				  <a href="search.html" class="btn btn-primary">Search</a>
@@ -112,71 +114,7 @@
     <!-- Image Showcases -->
     <section class="showcase">
       <div class="container-fluid p-0">
-		<h3>Find Listings Near You!</h3>
-    <input id="pac-input" class="controls" type="text"
-       placeholder="Enter a location">
-		<div id="map"></div>
-    <div id="infowindow-content">
-     <span id="place-name"  class="title"></span><br>
-     <span id="place-address"></span>
-   </div>
-		<script>
-    function initMap() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.037056, lng: -75.3457687},
-        zoom: 13
-      });
 
-      var input = document.getElementById('pac-input');
-
-      var autocomplete = new google.maps.places.Autocomplete(input);
-      autocomplete.bindTo('bounds', map);
-
-      map.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
-
-      var infowindow = new google.maps.InfoWindow();
-      var infowindowContent = document.getElementById('infowindow-content');
-      infowindow.setContent(infowindowContent);
-      var marker = new google.maps.Marker({
-        map: map
-      });
-
-
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
-
-      autocomplete.addListener('place_changed', function() {
-        infowindow.close();
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-          return;
-        }
-
-        if (place.geometry.viewport) {
-          map.fitBounds(place.geometry.viewport);
-        } else {
-          map.setCenter(place.geometry.location);
-          map.setZoom(17);
-        }
-
-        // Set the position of the marker using the place ID and location.
-        marker.setPlace({
-          placeId: place.place_id,
-          location: place.geometry.location
-        });
-        marker.setVisible(true);
-
-        infowindowContent.children['place-name'].textContent = place.name;
-        infowindowContent.children['place-address'].textContent =
-            place.formatted_address;
-        infowindow.open(map, marker);
-      });
-    }
-		</script>
-    <script async defer
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBF7qRtOjwySV1scxzdS7h-_L23zyAOIA0&libraries=places&callback=initMap">
-    </script>
         <div class="row no-gutters">
 
           <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url(https://static1.squarespace.com/static/52b92454e4b069f3ae44dfc5/t/530fab3ce4b0c3335b97224e/1393535807988/iStock_000017020986Medium.jpg?format=500w);"></div>
@@ -254,7 +192,7 @@
                 <a href="#">Privacy Policy</a>
               </li>
             </ul>
-            <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2018. All Rights Reserved.</p>
+            <p class="text-muted small mb-4 mb-lg-0">&copy; Sublet Paradise 2018. All Rights Reserved.</p>
           </div>
           <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
             <ul class="list-inline mb-0">
