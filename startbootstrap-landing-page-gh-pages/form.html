@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Villanova Properties</title>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+<style>
+    .controls {
+    background-color: #fff;
+    border-radius: 2px;
+    border: 1px solid transparent;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    height: 29px;
+    margin-left: 17px;
+    margin-top: 10px;
+    outline: none;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 400px;
+  }
+
+  .controls:focus {
+    border-color: #4d90fe;
+  }
+  .title {
+    font-weight: bold;
+  }
+  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Villanova housing portal for off campus housing">
+    <meta name="author" content="Nils Lofgren and Nick Savino">
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/landing-page.min.css" rel="stylesheet">
+    <link href="css/form-style.css" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+  <!---Navigation-->
+    <nav class="navbar navbar-light bg-light static-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">CSC 4480's Software</a>
+    <div class="form-row">
+                <div class="col-12 col-md-9 mb-2 mb-md-0">
+                  <input type="search" class="form-control form-control-lg" placeholder="Enter Address Here...">
+                </div>
+                <div class="col-12 col-md-3">
+          <a href="search.html" class="btn btn-primary">Search</a>
+        </div>
+              </div>
+        <a class="btn btn-primary" href="form.html">Add Your Property</a>
+      </div>
+
+    </nav>
+
+                <h1> Add Your Property </h1>
+    <form action="php/form-controller.php" method="post">
+        <div class="form-field">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="user_name">
+        </div>
+        <div>
+            <label for="mail">E-mail:</label>
+            <input type="email" id="mail" name="user_mail">
+        </div>
+        <div>
+            <label for="msg">Message:</label>
+            <textarea id="msg" name="user_message"></textarea>
+        </div>
+        <div class="button">
+          <button type="submit">Send your message</button>
+        </div>
+    </form>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
