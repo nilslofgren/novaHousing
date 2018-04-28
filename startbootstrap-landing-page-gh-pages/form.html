@@ -69,7 +69,7 @@
     </nav>
 
                 <h1> Add Your Property </h1>
-    <form action="php/form-controller.php" method="get">
+    <form action="php/form-controller.php" method="post">
         <div class="form-field">
             <label for="name">Name:</label>
             <input type="text" id="name" name="user_name">
@@ -82,9 +82,8 @@
             <label for="msg">Message:</label>
             <textarea id="msg" name="user_message"></textarea>
         </div>
-        <div class="button">
-          <button type="submit">Send your message</button>
-        </div>
+          <input type="submit" placeholder="Send Your Message">
+
     </form>
 
 
