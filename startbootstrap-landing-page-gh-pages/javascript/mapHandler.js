@@ -1,8 +1,4 @@
 
-$.get('index.html', null, function(text){
-    alert($(text).find('#campuses'));
-});
-
 function initMap(val) {
   console.log("Made it to the function")
   console.log("value is: " + val);
