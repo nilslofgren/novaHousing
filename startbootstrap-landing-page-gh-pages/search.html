@@ -2,7 +2,7 @@
 <html lang="en">
 
   <head>
-    <title>Villanova Properties</title>
+    <title>Sublet Paradise</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
 	<style>
@@ -65,28 +65,25 @@
 	    <!-- Navigation -->
     <nav class="navbar navbar-light bg-light static-top">
       <div class="container">
-        <a class="navbar-brand" href="#">CSC 4480's Software</a>
+        <a class="navbar-brand" href="search.html">Sublet Paradise</a>
 		<div class="form-row">
-                <div class="col-12 col-md-9 mb-2 mb-md-0">
-                  <input type="search" class="form-control form-control-lg" placeholder="Enter Address Here...">
-                </div>
-                <div class="col-12 col-md-3">
-				  <a href="http://google.com" class="btn btn-primary">Go to Google</a>
-				</div>
+        <p> Select your campus here: </p>
+        <br>
+      </div>
+      <div class = "dropdownClass">
+        <select id="campuses" class="dropdown" placeholder="Choose Campus Here..">
+          <option value="Villanova University"> Villanova University</option>
+          <option value="Drexel University"> Drexel University</option>
+        </select>
+        <button type="button" onclick="initMap()">Search</button>
               </div>
+            </div>
         <a class="btn btn-primary" href="form.html">Add Your Property</a>
       </div>
 
     </nav>
 
-    <div class="col-12 col-md-9 mb-2 mb-md-0">
-      <p> Select your campus here: </p>
-      <select id="campuses" class="dropdown" placeholder="Choose Campus Here..">
-        <option value="Villanova University"> Villanova University</option>
-        <option value="Drexel University"> Drexel University</option>
-      </select>
-      <button type="button" onclick="initMap()"> Search</button>
-    </div>
+
 <br>
       <!-- Image Showcases -->
     <section class="showcase">

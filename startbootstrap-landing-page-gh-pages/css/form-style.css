@@ -59,6 +59,17 @@ button {
 }
 
 .dropdown {
-  width: 400px;
+  width: 300px;
   padding: 6px;
+  padding-right: 100px;
+}
+
+.form-row{
+  font-size: 23px;
+  padding-top: 18px;
+}
+
+.navbar-brand{
+  font-size: 30px;
+  font-style: oblique;
 }
