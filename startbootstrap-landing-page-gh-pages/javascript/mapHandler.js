@@ -1,8 +1,5 @@
 
 function initMap() {
-  var geocoder = new google.maps.Geocoder();
-
-  geocodeAddress(geocoder, map);
   var dropSelection = document.getElementById("campuses").value;
   console.log("value is: " + dropSelection);
 
@@ -87,17 +84,17 @@ function initMap() {
     infowindow.open(map, marker);
   });
 }
-
+/*
 function geocodeAddress(geocoder, resultsMap) {
         var address = document.getElementById('address').value;
         console.log("value of address is: " + document.getElementById('address').content);
-        geocoder.geocode({'address': address}, function(address, status) {
-          status = 'OK';
+        geocoder.geocode({'address': address}, function(results, status) {
+          console.log("status: " + status);
           if (status === google.maps.GeocoderStatus.OK) {
-            map.setCenter(address.geometry.location);
+            resultsMap.setCenter(results[0].geometry.location);
             var marker = new google.maps.Marker({
               map: resultsMap,
-              position: address.geometry.location
+              position: results[0].geometry.location
             });
             console.log("Marker placed");
           } else {
@@ -105,3 +102,4 @@ function geocodeAddress(geocoder, resultsMap) {
           }
         });
       }
+*/
