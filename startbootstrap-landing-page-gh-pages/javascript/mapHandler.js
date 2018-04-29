@@ -1,6 +1,8 @@
 
 function initMap() {
+  var geocoder = new google.maps.Geocoder();
 
+  geocodeAddress(geocoder, map);
   var dropSelection = document.getElementById("campuses").value;
   console.log("value is: " + dropSelection);
 
@@ -86,18 +88,20 @@ function initMap() {
   });
 }
 
-/*
-function getLatLong(address) {
-var geocoder = new google.maps.Geocoder();
-var result = "";
-geocoder.geocode( { 'address': address, 'region': 'uk' }, function(results, status) {
-     if (status == google.maps.GeocoderStatus.OK) {
-         result[lat] = results[0].geometry.location.Pa;
-         result[lng] = results[0].geometry.location.Qa;
-     } else {
-         result = "Unable to find address: " + status;
-     }
-     storeResult(result);
-    });
-}
-*/
+function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        console.log("value of address is: " + document.getElementById('address').content);
+        geocoder.geocode({'address': address}, function(address, status) {
+          status = 'OK';
+          if (status === google.maps.GeocoderStatus.OK) {
+            map.setCenter(address.geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: address.geometry.location
+            });
+            console.log("Marker placed");
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
