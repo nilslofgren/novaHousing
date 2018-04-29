@@ -1,14 +1,43 @@
 
-function initMap(val) {
-  console.log("Made it to the function")
-  console.log("value is: " + val);
-  val = "Villanova University";
-  if (val == "Villanova University"){
+function initMap() {
+
+  var dropSelection = document.getElementById("campuses").value;
+  console.log("value is: " + dropSelection);
+
+  if (dropSelection == "Villanova University"){
+    var novaLatLng = {lat: 40.037056, lng: -75.3457687};
     var map = new google.maps.Map(document.getElementById('map'), {
-      center: {lat: 40.037056, lng: -75.3457687},
+      center: novaLatLng,
       zoom: 13
     });
-}
+    var marker = new google.maps.Marker({
+      position: novaLatLng,
+      map: map
+    });
+    google.maps.event.addListener(marker, 'click', (function(marker) {
+         return function() {
+             infowindow.setContent("Villanova University");
+             infowindow.open(map, marker);
+         }
+    })(marker));
+  }
+  else if(dropSelection == "Drexel University"){
+    var drexLatLng = {lat: 39.9566127, lng: -75.1899441};
+    var map = new google.maps.Map(document.getElementById('map'), {
+      center: drexLatLng,
+      zoom: 13
+    });
+    var marker = new google.maps.Marker({
+      position: drexLatLng,
+      map: map
+    });
+    google.maps.event.addListener(marker, 'click', (function(marker) {
+         return function() {
+             infowindow.setContent("Drexel University");
+             infowindow.open(map, marker);
+         }
+    })(marker));
+  }
 
   var input = document.getElementById('pac-input');
 
@@ -56,3 +85,19 @@ function initMap(val) {
     infowindow.open(map, marker);
   });
 }
+
+/*
+function getLatLong(address) {
+var geocoder = new google.maps.Geocoder();
+var result = "";
+geocoder.geocode( { 'address': address, 'region': 'uk' }, function(results, status) {
+     if (status == google.maps.GeocoderStatus.OK) {
+         result[lat] = results[0].geometry.location.Pa;
+         result[lng] = results[0].geometry.location.Qa;
+     } else {
+         result = "Unable to find address: " + status;
+     }
+     storeResult(result);
+    });
+}
+*/

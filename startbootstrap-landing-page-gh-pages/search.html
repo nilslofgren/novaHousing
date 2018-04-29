@@ -56,6 +56,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/landing-page.min.css" rel="stylesheet">
+    <link href="css/form-style.css" rel="stylesheet">
 
   </head>
 
@@ -78,6 +79,15 @@
 
     </nav>
 
+    <div class="col-12 col-md-9 mb-2 mb-md-0">
+      <p> Select your campus here: </p>
+      <select id="campuses" class="dropdown" placeholder="Choose Campus Here..">
+        <option value="Villanova University"> Villanova University</option>
+        <option value="Drexel University"> Drexel University</option>
+      </select>
+      <button type="button" onclick="initMap()"> Search</button>
+    </div>
+<br>
       <!-- Image Showcases -->
     <section class="showcase">
 

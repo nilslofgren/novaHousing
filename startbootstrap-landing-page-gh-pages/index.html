@@ -98,14 +98,16 @@
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
                   <select id="campuses" class="form-control form-control-lg" placeholder="Choose Campus Here..">
                     <option value="Villanova University"> Villanova University</option>
+                    <option value="Drexel University"> Drexel University</option>
                   </select>
                 </div>
                 <div class="col-12 col-md-3">
                   <script src="javascript/mapHandler.js"></script>
                   <script> console.log(document.getElementById("campuses").value);
                           var loc = document.getElementById("campuses").value
+                          initMap(loc);
                   </script>
-				  <a href="search.html" onclick="initMap(loc);" class="btn btn-primary">Search</a>
+				  <a href="search.html" class="btn btn-primary">Search</a>
 
         </div>
               </div>
